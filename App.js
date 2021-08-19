@@ -68,10 +68,11 @@ app.post("/send-mail", async(req, res) => {
             res.status(500).json("failed")
         } else {
             console.log('Email sent: ' + info.response);
+            res.status(200).json("success")
         }
     });
 
-    res.status(200).json("success")
+
 });
 
 
