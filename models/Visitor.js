@@ -13,7 +13,7 @@ const VisitorSchema = new mongoose.Schema({
         type: String,
         required: true,
         max: 50,
-        unique: true
+        unique: false
     },
     message: {
         type: String,
