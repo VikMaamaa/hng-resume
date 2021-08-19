@@ -45,32 +45,35 @@ app.post("/send-mail", async(req, res) => {
             //save user and respond
         const user = await newVisitor.save()
 
+
+        var to = req.body.email,
+            subject = "MAAMAA VICTOR RESUME VISITOR",
+            message = "I have received your message";
+        // email = req.body.email;
+        // name = req.body.name;
+        //options
+        const mailOptions = {
+            from: process.env.EMAIL_USERNAME,
+            to: to,
+            subject: subject,
+            html: message
+        };
+
+        //delivery
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error) {
+                console.log(error);
+                res.status(200).json("success")
+            } else {
+                console.log('Email sent: ' + info.response);
+                res.status(200).json("success")
+            }
+        });
+
     } catch (err) {
         res.status(500).json("failed")
     }
-    var to = req.body.email,
-        subject = "MAAMAA VICTOR RESUME VISITOR",
-        message = "I have received your message";
-    // email = req.body.email;
-    // name = req.body.name;
-    //options
-    const mailOptions = {
-        from: process.env.EMAIL_USERNAME,
-        to: to,
-        subject: subject,
-        html: message
-    };
 
-    //delivery
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-            res.status(200).json("success")
-        } else {
-            console.log('Email sent: ' + info.response);
-            res.status(200).json("success")
-        }
-    });
 
 
 });
