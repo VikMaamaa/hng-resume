@@ -1,19 +1,21 @@
 /*eslint-disable*/
 import { register } from './register.js';
-
-
-
 const boxes = document.querySelectorAll('.box')
 
-window.addEventListener('scroll', checkBoxes)
+
+window.addEventListener('scroll', checkBoxes);
 console.log(screen.width)
 checkBoxes()
 
-const registerForm = document.querySelector('.form--send')
+
+const registerForm = document.querySelector('.form--send');
 const labels = document.querySelectorAll('.form-control label')
 
 labels.forEach(label => {
-    label.innerHTML = label.innerText.split('').map((letter, idx) => `<span style="transition-delay: ${idx * 50}ms">${letter}</span>`).join('')
+    label.innerHTML = label.innerText
+        .split('')
+        .map((letter, idx) => `<span style="transition-delay: ${idx*50}ms">${letter}</span>`)
+        .join('')
 })
 
 
@@ -23,7 +25,7 @@ function checkBoxes() {
     if (screen.width < 1100) {
         var triggerBottom = (window.innerHeight / 2 * 2)
     } else {
-        triggerBottom = (window.innerHeight / 6 * 4)
+        var triggerBottom = (window.innerHeight / 6 * 4)
     }
 
 
@@ -51,16 +53,7 @@ if (registerForm) {
 }
 
 
-
 $(document).ready(function() {
-
-
-    document.querySelector('.about').style.display = "none"
-    document.querySelector('.education').style.display = "none"
-    document.getElementById('contact').style.display = "none"
-    document.querySelector('.education1').style.display = "none"
-    document.getElementById('project').style.display = "none"
-    document.getElementById('blogs').style.display = "none"
     $(window).scroll(function() {
         // sticky navbar on scroll script
         if (this.scrollY > 20) {
@@ -103,46 +96,10 @@ $(document).ready(function() {
         loop: true
     });
 
-
+    // var typed = new Typed(".typing-2", {
+    //     strings: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+    //     typeSpeed: 100,
+    //     backSpeed: 60,
+    //     loop: true
+    // });
 });
-
-
-var znav = $("nav")
-var menu = $("nav ul")
-var toggle = $("nav ul .menu")
-
-toggle.on("click", function() {
-    if (menu.hasClass("active")) {
-        // menu.css("z-index", '10')
-        // menu.removeClass("zh")
-        console.log("remove ", menu)
-        znav.removeClass("zh")
-        menu.removeClass("active")
-
-    } else {
-        // menu.css("z-index", '25')
-        // menu.addClass("zh")
-        console.log("add ", menu)
-        znav.addClass("zh")
-        menu.addClass("active zh")
-
-    }
-})
-
-$(".nli").on("click", function() {
-    if (menu.hasClass("active")) {
-        // menu.css("z-index", '10')
-        // menu.removeClass("zh")
-        console.log("remove ", menu)
-        znav.removeClass("zh")
-        menu.removeClass("active zh")
-
-    } else {
-        // menu.css("z-index", '25')
-        // menu.addClass("zh")
-        console.log("add ", menu)
-        znav.addClass("zh")
-        menu.addClass("active zh")
-
-    }
-})

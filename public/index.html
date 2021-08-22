@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src *  'unsafe-eval' 'unsafe-inline'; script-src * 'unsafe-eval' 'unsafe-inline'; script-src-elem * 'unsafe-eval' 'unsafe-inline';style-src * 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="./jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="./w3.css">
-    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <!-- <script src="../node_modules/axios/axios.min.js"></script> -->
+
+    <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
@@ -17,308 +18,583 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Maamaa Victor</title>
-    <style>
+    <script>
+        function swap(dis) {
+            document.getElementById('home').style.display = "none"
+            document.querySelector('.about').style.display = "none"
+            document.querySelector('.education').style.display = "none"
+            document.querySelector('.education1').style.display = "none"
 
-    </style>
+            document.getElementById('contact').style.display = "none"
+            document.getElementById('project').style.display = "none"
+            document.getElementById('blogs').style.display = "none"
+            switch (dis) {
+                case "home":
+                    document.getElementById('home').style.display = "block"
+                    break;
+                case "about":
+                    document.querySelector('.about').style.display = "block"
+                    document.querySelector('.education').style.display = "block"
+                    document.querySelector('.education1').style.display = "block"
+
+
+                    break;
+                case "contact":
+                    document.getElementById('contact').style.display = "block"
+                    break;
+                case "blogs":
+                    document.getElementById('blogs').style.display = "block"
+                    break;
+                case "projects":
+                    document.getElementById('project').style.display = "block"
+                    break;
+                case "mini-projects":
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    </script>
 </head>
 
 <body>
 
-    <div class="central">
-        <!-- <nav class="navbar">
-            <div class="max-width">
-                <div class="logo"><a href="#"> Danny-el <span>Portfolio</span></a></div>
-                <ul class="menu">
-                    <li><a href="#home" class="menu-btn">Home    </a></li>
-                    <li><a href="#about" class="menu-btn">About   </a></li>
-                    <li><a href="#services" class="menu-btn">Services</a></li>
-                    <li><a href="#skills" class="menu-btn">Skills  </a></li>
-                    <li><a href="#teams" class="menu-btn">Teams   </a></li>
-                    <li><a href="#contact" class="menu-btn">Contact </a></li>
-                </ul>
-        </nav> -->
-        <section class="home" id="home" style="z-index: 100;background-color: white;">
-            <div class="max-width">
-                <div class="home-content">
-                    <div class="text-1">
-                        <p style="color: crimson;">Hello, my name is</p>
-                    </div>
-                    <div class="text-2" style="color: crimson;">Maamaa Victor</div>
-                    <div class="text-3" style="color: crimson;">And I'm a <span class="typing"></span></div>
-                    <a href="#hire" style="text-decoration: none;">Hire me</a>
+
+
+
+    <div class="App" style="width:100vw; padding: 0;margin: 0;">
+        <nav id="nav">
+            <ul>
+                <div class="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </div>
-        </section>
-        <div class="container box" id="first">
-            <div class="card" id="profileImage">
-                <img src="./g.png" alt="">
-                <div class="reflection"></div>
-            </div>
-            <div id="profileText">
-                <h2 style="color: crimson;">Maamaa Victor</h2>
-                <h4>Software Engineer</h4>
-                <h5> Logical and results-driven Software Engineer dedicated to building and optimizing user- focused websites for customers with various business objectives. Judicious and creative when crafting effective websites, apps and platforms to propel
-                    competitive advantage and revenue growth. Technically proficient and analytical problem solver with calm and focused demeanor.</h5>
-            </div>
+                <li class="nli" onclick="swap('home')">
+                    <a>
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nli" onclick="swap('about')">
+                    <a>
+                        <i class="fas fa-user-alt"></i> About
+                    </a>
+                </li>
+                <li class="nli" onclick="swap('projects')">
+                    <a>
+                        <i class="fas fa-briefcase"></i> Projects
+                    </a>
+                </li>
+                <li class="nli" onclick="swap('mini-projects')">
+                    <a>
+                        <i class="fas fa-box"></i> Mini-Projects
+                    </a>
+                </li>
+                <li class="nli" onclick="swap('blogs')">
+                    <a>
+                        <i class="fas fa-blog"></i> Blogs
+                    </a>
+                </li>
+                <li class="nli" onclick="swap('contact')">
+                    <a><i class="fas fa-phone"></i>
+                        Contact</a>
+                </li>
+            </ul>
+        </nav>
 
-
+        <div class="box1">
+            <div><img src="./003-java.svg" alt=""></div>
+            <div><img src="./005-python.svg" alt=""></div>
+            <div><img src="./030-html-5.svg" alt=""></div>
+            <div><img src="./031-css.svg" alt=""></div>
+            <div><img src="./029-javascript.svg" alt=""></div>
+            <div><img src="./027-php.svg" alt=""></div>
+            <div><img src="./nodejs.svg" alt=""></div>
+            <div><img src="./006-react.svg" alt=""></div>
+            <div><img src="./018-c.svg" alt=""></div>
+            <div><img src="./010-github.svg" alt=""></div>
         </div>
-        <div class="container box iconContainer">
-            <div class="card icons">
-                <!-- <img src="phone4change.png" alt=""> -->
-                <i class="fa fa-envelope" aria-hidden="true" style="margin-right: 5%;"></i>
-                <h4>maamaavictor@yahoo.com</h4>
-            </div>
+        <div class="containerN" id="containerN">
+            <section class="home" id="home" style="z-index: 999;background-color: white;">
+                <div class="max-width">
+                    <div class="home-content">
+                        <div class="text-1">
+                            <p style="color:#fa2169">Hello, my name is</p>
+                        </div>
+                        <div class="text-2">Maamaa Victor</div>
+                        <div class="text-3">And I'm a <span class="typing"></span></div>
+                        <a href="#" style="text-decoration: none;">Hire me</a>
+                    </div>
+                </div>
+                <!-- <div class="homePage" style=" z-index: 1000">
+                    <div class="icons">
+                        <a class="icon-holder" href="https://www.facebook.com/vik.maamaa">
+                            <i class="icon fb fa fa-facebook"></i>
+                        </a>
+                        <a class="icon-holder" href="https://github.com/VikMaamaa">
+                            <i class="icon gh fa fa-github-square"></i>
+                            <i class="icon gh fa fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a class="icon-holder" href="https://twitter.com/MaamaaVictor?s=08">
+                            <i class="icon yt fa fa-twitter"></i>
+                        </a>
+                        <a class="icon-holder" href="https://www.linkedin.com/in/maamaa-victor-aa1936209">
+                            <i class="icon yt fa fa-linkedin"></i>
+                        </a>
+                        <a class="icon-holder" href="https://mavik.netlify.app">
+                            <i class="icon yt fa fa-linux"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </section>
 
-            <div class="card icons">
-                <!-- <img src="phone4change.png" alt=""> -->
-                <i class="fa fa-phone" aria-hidden="true" style="margin-right: 5%;"></i>
-                <h4>+2349071840139</h4>
-            </div>
 
-            <div class="card icons">
-                <i class="fa fa-github-square" aria-hidden="true" style="margin-right: 5%;"></i>
-                <!-- <img src="phone4change.png" alt=""> -->
-                <h4>
-                    <a href="https://github.com/VikMaamaa" style="text-decoration: none">github.com/VikMaamaa</a>
-                </h4>
-            </div>
 
-            <div class="card icons">
-                <!-- <img src="phone4change.png" alt=""> -->
-                <i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 5%;"></i>
-                <h4>Uyo,Nigeria</h4>
-            </div>
+            <div class="main-content" style="background-color: transparent;">
+                <div class=" content1 " style="width: 100%;">
+                    <div class="AboutPage about" id="about" style="background-color: white; margin-top: 0; ">
 
-            <div class="card icons">
-                <i class="fa fa-server" aria-hidden="true" style="margin-right: 5%;"></i>
-                <!-- <img src="phone4change.png" alt=""> -->
-                <h4>
-                    <a href="https://mavik.netlify.app" style="text-decoration: none;">mavik.netlify.app</a>
-                </h4>
-            </div>
 
-        </div>
-        <div class="container box">
-            <h1 style="color: crimson;">Work Experience</h1>
-            <div class="timeline-container">
-                <div class="timeline">
-                    <ul>
-                        <li>
-                            <div class="timeline-content">
-                                <h2 class="date">20th jan 2015 - 1st jan 2018</h2>
-                                <h1 style="color: crimson;">IT Engineer</h1>
-                                <p>At Evergreen Communications Bori, Rivers State.</p>
+                        <div class="Title t1" style="margin-top: 10%;">
+                            <h3>
+                                About Me
+                                <span>About Me</span>
+                            </h3>
+                        </div>
+                        <div class="ImageSection ">
+
+                            <div class="pop-container">
+                                <div class="pop-box ">
+                                    <div class="pop-circle " style="width: 100%;">
+                                        <!-- <img src={about} alt=" " /> -->
+                                        <img src="./g1.png" alt="">
+                                    </div>
+                                    <!-- <img src={about} alt=" " /> -->
+                                    <img src="./g1.png" alt="">
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <div class="timeline-content">
-                                <h2 class="date">20th July 2020 -23th Dec 2020</h2>
-                                <h1 style="color: crimson;">Web Development Tutor</h1>
-                                <p>worked full time as a website development tutor, teaching html5, css, javascript and Php</p>
+                            <div class="about-info">
+                                <h4>I am a<span> Software Engineer</span></h4>
+                                <p class="about-text ">
+                                    with 5 years of experience in programming, currently specializing in Web Development. I listen to Tech podcasts, follow up TED shows, attend Tech Workshops and Seminars.
+                                </p>
+                                <p>At my free time i give Tech tips, play mind and strategy games, read Mangas and watch Animes. </p>
+                                <div class="about-details ">
+                                    <div class="left-section ">
+
+                                        <p>Age</p>
+                                        <p>Nationality</p>
+                                        <p>Languages</p>
+                                        <p>Countries</p>
+                                        <p>Address</p>
+
+                                    </div>
+                                    <div class="right-section ">
+
+                                        <p>: 21</p>
+                                        <p>: Nigeria</p>
+                                        <p>: English,Khana</p>
+                                        <p>: Nigeria</p>
+                                        <p>: 5 Bank Road Bori Rivers State</p>
+                                    </div>
+                                </div>
+                                <button class="btn"> <a class="down" href="./maamaa-victor-cv.pdf " download>Download CV  <i class="fas fa-download down"></i> </a>
+                    </button>
                             </div>
-                        </li>
-                        <li>
-                            <div class="timeline-content">
-                                <h2 class="date">15th Sep 2020 - 15th Apr 2021</h2>
-                                <h1 style="color: crimson;">Full Stack Web Developer</h1>
-                                <p>At Benton Consult, Port Harcourt, Rivers State, Nigeria.</p>
+                        </div>
+
+                        <div class="Title">
+                            <h3>
+                                Experience
+                                <span>Experience</span>
+                            </h3>
+                        </div>
+
+                        <div class="timeline-container">
+                            <div class="timeline">
+                                <ul>
+                                    <li>
+                                        <div class="timeline-content">
+                                            <h2 class="date ">20th jan 2015 - 1st jan 2018</h2>
+                                            <h1>IT Engineer</h1>
+                                            <p>At Evergreen Communications Bori, Rivers State.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-content">
+                                            <h2 class="date ">20th July 2020 -23th Dec 2020</h2>
+                                            <h1>Web Development Tutor</h1>
+                                            <p>worked full time as a website development tutor, teaching html5, css, javascript and Php</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-content">
+                                            <h2 class="date ">15th Sep 2020 - 15th Apr 2021</h2>
+                                            <h1>Full Stack Web Developer</h1>
+                                            <p>At Benton Consult, Port Harcourt, Rivers State, Nigeria.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-content">
+                                            <h2 class="date ">21th June 2021 - 21th July 2021</h2>
+                                            <h1>Side Hustle Intern</h1>
+                                            <p></p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
-                        </li>
-                        <li>
-                            <div class="timeline-content">
-                                <h2 class="date">21th June 2021 - 21th July 2021</h2>
-                                <h1 style="color: crimson;">Side Hustle Intern</h1>
-                                <p></p>
+                        </div>
+
+                        <div class="container box about">
+                            <div class="card">
+                                <div class="content third">
+                                    <h2>01</h2>
+                                    <h3>IT Engineer</h3>
+                                    <p>Maintained Service Schedule for Hardware and Software.</p>
+                                    <p>Performed scheduled service work including installations ,testing and repairs.</p>
+
+                                </div>
+                                <div class="reflection"></div>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="card">
+                                <div class="content third">
+                                    <h2>02</h2>
+                                    <h3>Web Development Tutor</h3>
+
+                                    <p>Developed student confidence though attentive instruction in Web Development, applying positive reinforcement strategies</p>
+                                    <p>Taught and assisted students in Courier such areas Html5, Css, Javascript, Php and MySql, creating tailored lesson plans and study guides</p>
+
+                                </div>
+                                <div class="reflection"></div>
+                            </div>
+                            <div class="card">
+                                <div class="content third">
+                                    <h2>03</h2>
+                                    <h3>Full Stack Web Developer</h3>
+                                    <p>Used Javascript, SQL, PHP and HTML to develop web solution.</p>
+                                    <p>Employed coding practices based on commonly accepted standards to establish site layout and user interface.</p>
+                                </div>
+                                <div class="reflection "></div>
+                            </div>
+                            <div class="card">
+                                <div class="content third">
+                                    <h2>04</h2>
+                                    <h3>Intern</h3>
+                                    <p>Analyzed problems, identified solutions and made decisions.</p>
+                                    <p>Reported back to instructor to receive day-to-day tasks and responsibilities.
+                                    </p>
+                                </div>
+                                <div class="reflection"></div>
+                            </div>
+                        </div>
+                        <div class="Title about" style="margin-top: 2%; ">
+                            <h3>
+                                Skills
+                                <span>Skills</span>
+                            </h3>
+                        </div>
+                        <div class="container box fifth about" style="margin-top: 2%; ">
+
+                            <div class="skillsContainer">
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+                                        <div class="skill-i ">
+                                            <img src="./006-react.svg" alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title ">React Js</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+                                        <div class="skill-i">
+                                            <img src="./nodejs.svg" alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title">Node Js</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+
+                                        <div class="skill-i">
+                                            <img src="./027-php.svg" alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title">Php</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+
+                                        <div class="skill-i ">
+                                            <img src="./css-3.svg" alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title">Css</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+
+                                        <div class="skill-i">
+                                            <img src="./030-html-5.svg" alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title ">HTML</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+
+                                        <div class="skill-i">
+                                            <img src="./mongodb-icon-1.svg " alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title ">Mongo DB</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="SkillsSection">
+                                    <div class="skills-container">
+
+                                        <div class="skill-i">
+                                            <img src="./mariadb.svg " alt=" " style="width: 40%; ">
+                                            <h5 class="skill-title ">Maria DB</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="education box">
+                    <div class="Title" style="margin-top: 2%; margin-left: 12%; ">
+                        <h3>
+                            Education
+                            <span>Education</span>
+                        </h3>
+                    </div>
+                    <div class="container  education" style="margin-top: 2%; ">
+
+                        <!-- <h1 style="color: crimson; ">Education</h1> -->
+                        <div class="card fourth education1" style=" ">
+                            <div class="content third ">
+
+                                <h3>Bachelor of Engineering: Computer Engineering</h3>
+                                <h4>University of Uyo
+                                </h4>
+                                <a href="# ">Nov 2017 - July 2022</a>
+                            </div>
+                            <div class="reflection "></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Section -->
+                <div id="project" style="padding: 20px;">
+
+                    <div class="Title" style="margin-top: 10%;">
+                        <h3> Projects
+                            <span>Projects</span>
+                        </h3>
+                    </div>
+                    <div class="mini-cards">
+
+                        <div class="mini-card mini-card1">
+                            <div class="mini-container">
+                                <img src="./images/1.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 1</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                        <div class="mini-card mini-card2">
+                            <div class="mini-container">
+                                <img src="./images/2.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 2</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                        <div class="mini-card mini-card3">
+                            <div class="mini-container">
+                                <img src="./images/3.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 3</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                        <div class="mini-card mini-card1">
+                            <div class="mini-container">
+                                <img src="./images/4.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 4</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                        <div class="mini-card mini-card2">
+                            <div class="mini-container">
+                                <img src="./images/5.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 5</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                        <div class="mini-card mini-card3">
+                            <div class="mini-container">
+                                <img src="./images/6.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h3>Project 6</h3>
+
+                                <button>Git</button>
+                                <button>Live</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--BLOGS-->
+                <div id="blogs" style="margin-top: 10%;">
+                    <div class="Title" style="margin-top: 2%; margin-left: 12%; ">
+                        <h3>
+                            Blogs
+                            <span>Blogs</span>
+                        </h3>
+                    </div>
+                    <div class="BlogsPage">
+
+                        <div class="blog">
+                            <div class="blog-content">
+                                <img src="./images/4.png" alt=" " />
+                                <a href=" " class="blog-link ">
+                                           blog title
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="blog">
+                            <div class="blog-content">
+                                <img src="./images/3.png" alt=" " />
+                                <a href=" " class="blog-link ">
+                                           blog title
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="blog">
+                            <div class="blog-content">
+                                <img src="./images/2.png" alt=" " />
+                                <a href=" " class="blog-link ">
+                                           blog title
+                                        </a>
+                            </div>
+                        </div>
+                        <div class="blog">
+                            <div class="blog-content">
+                                <img src="./images/5.png" alt=" " />
+                                <a href=" " class="blog-link ">
+                                           blog title
+                                        </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- Contact section -->
+                <div class="w3-container w3-padding-32 w3-padding-large contact " style="background-color: transparent; position: relative; " id="contact">
+
+                    <div class="w3-content " style="max-width:600px; font-size: large;background-color: transparent; ">
+                        <!-- <h4 class="w3-center "><b>Contact Me</b></h4> -->
+                        <div class="Title " style="margin-bottom: 10%; ">
+                            <h3> Contact Me
+                                <span>Contact Me</span>
+                            </h3>
+                        </div>
+                        <p>Do you want me to work with you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
+                        <form class="form--send ">
+                            <div class="w3-section ">
+                                <label>Name</label>
+                                <input id="name" class="w3-input w3-border " type="text " name="Name " style="z-index: 1000; " required>
+                            </div>
+                            <div class="w3-section ">
+                                <label>Email</label>
+                                <input id="email" class="w3-input w3-border " type="text " name="Email " required>
+                            </div>
+                            <div class="w3-section ">
+                                <label>Message</label>
+                                <input id="message" class="w3-input w3-border " type="text " name="Message " required>
+                            </div>
+                            <button type="submit" class="w3-button w3-block w3-text-white w3-margin-bottom " style="background-color: #e91e63; ">Send Message</button>
+                        </form>
+                    </div>
+
                 </div>
             </div>
+
+            <footer class="w3-center w3-padding" style="background-color: black; width: 100%; ">
+
+                <a href="https://ingressive.org " style="text-decoration:none;color: #fff; ">
+                 Powered by   <img src="./ingressive.png " alt=" ">
+                </a>
+            </footer>
         </div>
-        <div class="container box">
-            <div class="card">
-                <div class="content third">
-                    <h2>01</h2>
-                    <h3>IT Engineer</h3>
-                    <p>Maintained Service Schedule for Hardware and Software.</p>
-                    <p>Performed scheduled service work including installations ,testing and repairs.</p>
-                    <!-- <a href="#">Read More</a> -->
-                </div>
-                <div class="reflection"></div>
-            </div>
-            <div class="card">
-                <div class="content third">
-                    <h2>02</h2>
-                    <h3>Web Development Tutor</h3>
-                    <!-- <p>Used positive reinforcement, repetition and review to help students master challenging material.</p>
-                    <p>Collaborated with students to complete homework assignments, identify lagging skills and correct weaknesses.</p> -->
-                    <p>Developed student confidence though attentive instruction in Web Development, applying positive reinforcement strategies</p>
-                    <p>Taught and assisted students in Courier such areas Html5, Css, Javascript, Php and MySql, creating tailored lesson plans and study guides</p>
-                    <!-- <a href="#">Read More</a> -->
-                </div>
-                <div class="reflection"></div>
-            </div>
-            <div class="card">
-                <div class="content third">
-                    <h2>03</h2>
-                    <h3>Full Stack Web Developer</h3>
-                    <p>Used Javascript, SQL, PHP and HTML to develop web solution.</p>
-                    <p>Employed coding practices based on commonly accepted standards to establish site layout and user interface.</p>
-                </div>
-                <div class="reflection"></div>
-            </div>
-            <div class="card">
-                <div class="content third">
-                    <h2>04</h2>
-                    <h3>Intern</h3>
-                    <p>Analyzed problems, identified solutions and made decisions.</p>
-                    <p>Reported back to instructor to receive day-to-day tasks and responsibilities.
-                    </p>
-                </div>
-                <div class="reflection"></div>
-            </div>
-        </div>
 
-        <div class="container box">
-            <h1 style="color: crimson;">Education</h1>
-            <div class="card fourth" style="width: 60%;">
-                <div class="content third ">
-                    <!-- <h2>01</h2> -->
-                    <h3>Bachelor of Engineering: Computer Engineering</h3>
-                    <h4>Univeristy of Uyo
-                    </h4>
-                    <a href="#">Nov 2017 - July 2022</a>
-                </div>
-                <div class="reflection"></div>
-            </div>
-        </div>
 
-        <div class="container box fifth">
-            <h1>Skills</h1>
-            <div class="skillsContainer">
-                <div class="SkillsSection">
-                    <div class="skills-container">
-                        <div class="skill-i">
-                            <img src="./006-react.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">React Js</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-                        <div class="skill-i">
-                            <img src="./nodejs.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">Node Js</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-
-                        <div class="skill-i">
-                            <img src="./027-php.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">Php</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-
-                        <div class="skill-i">
-                            <img src="./css-3.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">Css</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-
-                        <div class="skill-i">
-                            <img src="./030-html-5.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">HTML</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-
-                        <div class="skill-i">
-                            <img src="./mongodb-icon-1.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">Mongo DB</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="SkillsSection">
-                    <div class="skills-container">
-
-                        <div class="skill-i">
-                            <img src="./mariadb.svg" alt="" style="width: 40%;">
-                            <h5 class="skill-title">Maria DB</h5>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div id="hire" class="container box">
-            <!-- <h1 style="color: crimson;">Contact Me</h1> -->
-            <a href="https://ingressive.org"><img src="./ingressive.png" alt="">
-            </a>
-            <div class="card fourth" style="width: 50%; height: inherit;">
-
-                <form class="form--send form-container" style="width: 100%;height: 100%;">
-                    <h1 style="color: crimson; background-color: transparent;">Contact Me</h1>
-                    <div class="form-control">
-                        <input id="name" type="text" required>
-                        <label>Name</label>
-                    </div>
-                    <div class="form-control">
-                        <input id="email" type="text" required>
-                        <label>Email</label>
-                    </div>
-
-                    <div class="form-control" style="width: 100%;">
-                        <input id="message" type="text" required>
-                        <label>Message</label>
-                    </div>
-
-                    <button class="btn">Send</button>
-
-                </form>
-                <div class="reflection"></div>
-            </div>
-
-        </div>
     </div>
 
 
+    <div class="w3-card" style="z-index:1000;">
+        <div class="w3-modal " id="id07">
+            <div class="w3-modal-content w3-black w3-border w3-border-red w3-padding " style="top:30%; ">
+                <header class="w3-container w3-black "><span class="w3-button w3-display-topright w3-hover-white " onclick="document.getElementById( 'id07').style.display='none' ; ">×</span></header>
+                <div class="w3-container w3-center w3-margin ">
+                    <h6 class="w3-text-red w3-large " id="msg">Incorrect Details</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-card" style="z-index:1000;">
+        <div class="w3-modal" id="id09">
+            <div class="w3-modal-content w3-black w3-border w3-border-green w3-padding " style="top:30%; ">
+                <header class="w3-container w3-black "><span class="w3-button w3-display-topright w3-hover-green " onclick="document.getElementById( 'id09').style.display='none' ; ">×</span></header>
+                <div class="w3-container w3-center w3-margin">
+                    <h6 class="w3-text-green w3-large " id="msg1">Login Succesful</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="./card.js">
     </script>
 </body>
-<div class="w3-card" style="z-index:1000">
-    <div class="w3-modal" id="id07">
-        <div class="w3-modal-content w3-black w3-border w3-border-red w3-padding" style="top:30%;">
-            <header class="w3-container w3-black"><span class="w3-button w3-display-topright w3-hover-white" onclick="document.getElementById('id07').style.display='none';">×</span></header>
-            <div class="w3-container w3-center w3-margin">
-                <h6 class="w3-text-red w3-large" id="msg">Failed</h6>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="w3-card" style="z-index:1000;">
-    <div class="w3-modal" id="id09">
-        <div class="w3-modal-content w3-black w3-border w3-border-green w3-padding" style="top:30%;">
-            <header class="w3-container w3-black"><span class="w3-button w3-display-topright w3-hover-green" onclick="document.getElementById('id09').style.display='none';">×</span></header>
-            <div class="w3-container w3-center w3-margin">
-                <h6 class="w3-text-green w3-large" id="msg1">Succesful</h6>
-            </div>
-        </div>
-    </div>
-</div>
 
 </html>
 
-</html>
+
+<!-- <input id="message " type="text " required>
+<label>Message</label>
+</div>
+
+<button class="btn ">Send</button>
+
+</form>
+<div class="reflection "></div>
+</div>
+
+</div>
+</div> -->
