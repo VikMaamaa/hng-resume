@@ -115,14 +115,14 @@ toggle.on("click", function() {
     if (menu.hasClass("active")) {
         // menu.css("z-index", '10')
         // menu.removeClass("zh")
-        console.log("remove ", menu)
+//         console.log("remove ", menu)
         znav.removeClass("zh")
         menu.removeClass("active")
 
     } else {
         // menu.css("z-index", '25')
         // menu.addClass("zh")
-        console.log("add ", menu)
+//         console.log("add ", menu)
         znav.addClass("zh")
         menu.addClass("active zh")
 
@@ -133,14 +133,14 @@ $(".nli").on("click", function() {
     if (menu.hasClass("active")) {
         // menu.css("z-index", '10')
         // menu.removeClass("zh")
-        console.log("remove ", menu)
+//         console.log("remove ", menu)
         znav.removeClass("zh")
         menu.removeClass("active zh")
 
     } else {
         // menu.css("z-index", '25')
         // menu.addClass("zh")
-        console.log("add ", menu)
+//         console.log("add ", menu)
         znav.addClass("zh")
         menu.addClass("active zh")
 
